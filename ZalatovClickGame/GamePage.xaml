@@ -1,0 +1,140 @@
+﻿<Page x:Class="ZalatovClickGame.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:cm="clr-namespace:System.ComponentModel;assembly=System" 
+      xmlns:local="clr-namespace:ZalatovClickGame"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GamePage">
+    <!--<Page.Resources>
+        <cm:BackgroundWorker x:Key="backgroundWorker" DoWork="DoAsyncJob"></cm:BackgroundWorker>
+    </Page.Resources>-->
+
+    <!--ОСНОВНАЯ РАЗМЕТКА СТРАНИЦЫ-->
+    <Grid Background="AliceBlue">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--РАЗМЕТКА СО СТАТИСТИКОЙ ИГРОКА-->
+        <Grid Grid.Row="0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Name="averageReactionTime"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17" Margin="5">-СРЕДНЕЕ ВРЕМЯ РЕАКЦИИ-</TextBlock>
+            <TextBlock Grid.Column="1" Name="lastReactionTime" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17" Margin="5">-ПОСЛЕДНЕЕ ВРЕМЯ РЕАКЦИИ-</TextBlock>
+
+        </Grid>
+        
+        
+        <!--РАЗМЕТКА С ТАЙМЕРОМ ОБРАТНОГО ОТСЧЕТА-->
+        <Grid Grid.Row="1">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Name="BeforeStartTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">ДО СТАРТА:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Name="CountdownTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="#B2FF0000">3</TextBlock>
+        </Grid>
+
+        <!--РАЗМЕТКА ЦЕНТРАЛЬНОГО БЛОКА СЕТКИ-->
+        <Grid Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--РАЗМЕТКА ИГРОВОЙ ЗОНЫ С КНОПКАМИ-->
+            <Grid Grid.Column = "1" >
+                
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" Name="GameButton_0_0" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0" Click="GameButton_0_0_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="1" Name="GameButton_0_1" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0" Click="GameButton_0_1_Push" >
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="0" Grid.Row="2" Name="GameButton_0_2" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_0_2_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="0" Name="GameButton_1_0" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_1_0_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="1" Name="GameButton_1_1" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_1_1_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="1" Grid.Row="2" Name="GameButton_1_2" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_1_2_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="2" Grid.Row="0" Name="GameButton_2_0" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_2_0_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="2" Grid.Row="1" Name="GameButton_2_1" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_2_1_Push">
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                <Button Grid.Column="2" Grid.Row="2" Name="GameButton_2_2" Background="AliceBlue" Margin="3" Visibility="Hidden" Opacity="0.9" BorderThickness="0"  Click="GameButton_2_2_Push" >
+                    <Image Source="gfx/explosion.png"></Image>
+                </Button>
+                
+            </Grid>
+
+        </Grid>
+
+        <!--РАЗМЕТКА БЛОКА С КНОПКОЙ-->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Name="RestartButton" Margin="5" Click="RestartButtonClick">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFDEDEDE" Offset="0.817"/>
+                        <GradientStop Color="#FFD1D1D1" Offset="0.901"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="gfx/back.png" Margin="5"></Image>
+                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Light" Margin="10,0,0,0">ЗАНОВО</TextBlock>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
